@@ -35,8 +35,9 @@
 .link-p {
   color: #ff006b;
 }
-ul {
-  margin: 15px 0px 32px;
+.content-text ul {
+  padding-left: 1.4rem;
+  margin: 0px 0px 32px;
 }
 .content-text li + li {
   margin-top: 0.7rem;
@@ -57,6 +58,11 @@ ul {
 }
 
 /* Header */
+.navbar-nav {
+  --bs-nav-link-hover-color: #f5f5f5;
+  --bs-nav-link-padding-x: 0;
+  --bs-nav-link-padding-y: 0;
+}
 .nav-desktop-link a {
   text-decoration: none;
   color: var(--bs-body-color);
@@ -141,7 +147,7 @@ article a {
 article a :nth-child(1) {
   font-size: 11px;
   color: #ff006b;
-  font-weight: 600;
+  font-weight: 700;
 }
 article a :nth-child(2) {
   overflow: hidden;
@@ -202,7 +208,7 @@ tool .col > * {
   margin-bottom: 7px;
 }
 .title-book {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
 }
 .sub-title-book {
@@ -230,6 +236,7 @@ footer {
   font-weight: 500;
   word-spacing: 1px;
   font-size: 17px;
+  color: #eeeeee;
 }
 .title-date {
   text-align: center;
@@ -245,7 +252,7 @@ footer {
 }
 .title-2 {
   text-align: center;
-  font-size: 18px;
+  font-size: 17px;
   margin-top: 15px;
 }
 .title-3 {
@@ -260,12 +267,55 @@ footer {
 .content-text p {
   margin-bottom: 30px;
 }
+.navbar-toggler-icon {
+  background-image: none !important;
+  background-color: transparent;
+  height: 3px;
+  width: 29px;
+  margin: 10px 0;
+  position: relative;
+  transition: all 0.35s ease-out;
+  transform-origin: center;
+}
+.navbar-toggler-icon::before {
+  display: block;
+  background-color: #f5f5f5;
+  height: 3px;
+  content: "";
+  position: relative;
+  top: -3px;
+  transition: all 0.15s ease-out; /*taken down to hide quicker*/
+  transform-origin: center;
+}
+.navbar-toggler-icon::after {
+  display: block;
+  background-color: #f5f5f5;
+  height: 3px;
+  content: "";
+  position: relative;
+  top: 3px;
+  transition: all 0.35s ease-out;
+  transform-origin: center;
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+  transform: rotate(45deg);
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+  opacity: 1;
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+  transform: rotate(-90deg) translateX(9px);
+}
 
 /* Max Screen 768px */
 @media screen and (max-width: 768px) {
   /* Component */
   .container-fluid {
     --bs-gutter-x: 2.3rem;
+  }
+  /* Introduction */
+  .describe-text {
+    line-height: 1.7;
   }
   /* Footer */
   .copyright,
@@ -278,11 +328,17 @@ footer {
     --bs-gutter-x: 2.3rem;
   }
   /* Article */
-  article :nth-child(2) {
+  article {
+    padding: 13px 0;
+  }
+  article a :nth-child(2) {
     font-weight: 500;
   }
+  article .row {
+    --bs-gutter-x: 0rem;
+  }
   .title-1 {
-    font-size: 25px;
+    font-size: 26px;
   }
   .content-text {
     margin-top: 35px;
@@ -297,8 +353,18 @@ footer {
   :root {
     --bs-body-font-size: 15px;
   }
-  /* Header  */
-  .nav-desktop-link {
+  /* Header */
+  .navbar-nav {
+    --bs-nav-link-padding-x: 0;
+    --bs-nav-link-padding-y: 1rem;
+  }
+  .nav-desktop-link a {
+    text-decoration: none;
+    color: var(--bs-body-color);
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .moon {
     display: none !important;
   }
   /* Introduction */
@@ -307,6 +373,10 @@ footer {
   }
   .describe {
     line-height: 1.6;
+  }
+  /* Article */
+  .content-text p {
+    margin-bottom: 25px;
   }
   /* Tool & Project */
   .tool-project-section .row .col:nth-child(1) {

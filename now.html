@@ -9,7 +9,8 @@
   </head>
   <body>
     <!-- Header -->
-    <nav class="navbar bg-dark fixed-top">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg bg-dark fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"
           ><img
@@ -18,20 +19,47 @@
             srcset=""
             width="40px"
         /></a>
-        <div class="nav-desktop-link d-flex" style="font-weight: 500">
-          <div class="mx-3"><a href="index.html">Beranda</a></div>
-          <div class="mx-3"><a href="now.html">Now</a></div>
-          <div class="mx-3"><a href="uses.html">Uses</a></div>
-          <div class="mx-3"><a href="contact.html">Contact</a></div>
-          <div class="mx-3"><a href="">Resume</a></div>
-        </div>
-        <div class="">
-          <a class="mx-3" href="#">
-            <img src="./resources/images/moon-35px.svg" alt="" srcset=""
-          /></a>
-          <a href="">
-            <img src="./resources/images/menu-35px.svg" alt="" srcset=""
-          /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <img src="./resources/images/menu-35px.svg" alt="" srcset="" />
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul
+            class="navbar-nav m-auto nav-desktop-link"
+            style="font-weight: 500"
+          >
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="now.html">Now</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="uses.html">Uses</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="">Resume</a>
+            </li>
+          </ul>
+          <div class="d-flex moon">
+            <img
+              class="mx-3"
+              src="./resources/images/moon-35px.svg"
+              alt=""
+              srcset=""
+            />
+            <img src="./resources/images/menu-35px.svg" alt="" srcset="" />
+          </div>
         </div>
       </div>
     </nav>
@@ -39,7 +67,7 @@
     <div class="content">
       <div class="container">
         <div class="content-blog">
-          <div class="title-date">28 JAN 2023 - 6 MIN READ</div>
+          <!-- <div class="title-date">28 JAN 2023 - 6 MIN READ</div> -->
           <div class="title-1">/now</div>
           <div class="title-2">
             Siapa saya, dan apa yang saya lakukan sekarang?
@@ -69,7 +97,6 @@
               <li>Privasi &amp; keamanan dalam jaringan internet</li>
               <li>Segala hal tentang Cloud Computing dan Platform</li>
             </ul>
-            <p></p>
             <p>
               Dan saya terbuka untuk mendapatkan petualangan baru di Juni 2023
               nanti untuk posisi DevOps Engineer, SRE, ataupun Infra/Ops
